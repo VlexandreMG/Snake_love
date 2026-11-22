@@ -12,12 +12,22 @@ function Snake.new(length,state)
     return self 
 end
 
--- ===== public int getA() { return this.a; } (getter) =====
+
 function Snake:getLength()
     return self.length
 end
 
--- ===== public void setA(int a) { this.a = a; } (setter) =====
+
 function Snake:setLength(length)
     self.length = length
+end
+
+
+function Snake:getState()
+    return self.state
+end
+
+
+function Snake:setState(state)
+    self.state = state
 end
