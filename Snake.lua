@@ -1,13 +1,11 @@
 local Snake = {}
+Snake.__index = Snake
 
-Snake.length = 2
-Snake.state = true
+function Snake.new(length,alive)
+    locals self = setmettable({}, Snake)
 
-function Snake.new(length,state)
-    locals self = setmettable({},Snake)
-
-    self.length = length
-    self.state = state
+    self.length = length or 2
+    self.alive = alive ~= false
 
     return self 
 end
@@ -23,11 +21,13 @@ function Snake:setLength(length)
 end
 
 
-function Snake:getState()
-    return self.state
+function Snake:getAlive()
+    return self.alive
 end
 
 
-function Snake:setState(state)
-    self.state = state
+function Snake:setAlive(alive)
+    self.alive = alive
 end
+
+return Snake 
